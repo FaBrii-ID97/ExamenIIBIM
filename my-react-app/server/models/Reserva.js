@@ -18,10 +18,6 @@ const Reserva = sequelize.define('Reserva', {
     type: DataTypes.TIME,
     allowNull: false
   },
-  hora_fin: {
-    type: DataTypes.TIME,
-    allowNull: false
-  },
   duracion: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -37,40 +33,13 @@ const Reserva = sequelize.define('Reserva', {
       notEmpty: true,
       len: [2, 100]
     }
-  },
-  telefono: {
-    type: DataTypes.STRING,
-    allowNull: true,
-    validate: {
-      len: [0, 20]
-    }
-  },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: true,
-    validate: {
-      isEmail: true
-    }
-  },
-  estado: {
-    type: DataTypes.ENUM('pendiente', 'confirmada', 'cancelada', 'completada'),
-    defaultValue: 'confirmada'
-  },
-  precio_total: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: true,
-    defaultValue: 0.00
-  },
-  observaciones: {
-    type: DataTypes.TEXT,
-    allowNull: true
   }
 }, {
   tableName: 'reservas',
   indexes: [
     {
       unique: true,
-      fields: ['sectorId', 'fecha', 'hora_inicio', 'hora_fin'],
+      fields: ['sectorId', 'fecha', 'hora_inicio'],
       name: 'unique_reserva_sector_fecha_hora'
     }
   ]

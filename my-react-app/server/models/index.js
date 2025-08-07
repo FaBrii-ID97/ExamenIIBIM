@@ -51,8 +51,6 @@ const crearDatosIniciales = async () => {
     const adminExiste = await Usuario.findOne({ where: { username: 'admin' } });
     if (!adminExiste) {
       await Usuario.create({
-        nombre: 'Administrador',
-        email: 'admin@reservas.com',
         username: 'admin',
         password: '123',
         rol: 'admin'

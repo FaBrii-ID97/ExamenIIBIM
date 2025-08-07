@@ -7,22 +7,6 @@ const Usuario = sequelize.define('Usuario', {
     primaryKey: true,
     autoIncrement: true
   },
-  nombre: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      notEmpty: true,
-      len: [2, 50]
-    }
-  },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-    validate: {
-      isEmail: true
-    }
-  },
   username: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -41,12 +25,8 @@ const Usuario = sequelize.define('Usuario', {
     }
   },
   rol: {
-    type: DataTypes.ENUM('admin', 'cliente'),
-    defaultValue: 'cliente'
-  },
-  activo: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: true
+    type: DataTypes.ENUM('admin'),
+    defaultValue: 'admin'
   }
 }, {
   tableName: 'usuarios'

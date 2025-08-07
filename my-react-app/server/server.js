@@ -67,9 +67,7 @@ const iniciarServidor = async () => {
     // Iniciar servidor
     app.listen(PORT, () => {
       console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
-      console.log(`🌐 API disponible en: http://localhost:${PORT}/api`);
-      console.log(`🐘 Base de datos: PostgreSQL`);
-      console.log(`🔓 Autenticación: Simple (sin JWT)`);
+      console.log(`🐘 Base de datos: gestionReservas`);
       console.log(`✅ CORS configurado para: ${process.env.CORS_ORIGIN || 'http://localhost:5173'}`);
     });
     

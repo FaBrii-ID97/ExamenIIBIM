@@ -1,8 +1,5 @@
-// Middleware simple para verificar roles de admin
-// Sin autenticación por tokens - verificación básica por sesión
 
 const verificarAdmin = (req, res, next) => {
-  // En una implementación simple, podrías verificar un header o parámetro
   const isAdmin = req.headers['admin-user'] === 'true' || req.query.admin === 'true';
   
   if (!isAdmin) {
